@@ -1,0 +1,482 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    margin-right: 2em;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #000;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #38ABAB;
+}
+
+.dropdownparent {
+    position: relative;
+}
+
+.dropdownchild {
+    display: none;
+    margin-right: 0;
+    position: absolute;
+    top: 3.8em;
+    padding: 1em;
+    flex-direction: column;
+    gap: 1em;
+    transform: translateX(-1.5em);
+    background-color: #FFF;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    animation : fade .7s;
+}
+
+.dropdownchild li a:hover {
+    border-bottom: none;
+    color: #38ABAB;
+}
+
+.drowdownparent:hover .dropdownchild {
+    display: flex;
+}
+
+.login {
+    padding: 0.6em 1.2em;
+    background-color: #38ABAB;
+    color: #FFF;
+    border: 1px solid #38ABAB;
+    border-radius: 20px;
+    transition : .5s;
+}
+
+.login:hover {
+    border-bottom: 1px solid #38ABAB;
+    background-color: #FFF;
+    color: #38ABAB;
+}
+
+.hamburger {
+    margin-right: 0.5em;
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+}
+
+.active {
+    border-bottom: 2px solid #38ABAB;
+}
+
+main {
+    min-height: 72vh;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/home.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 72vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+}
+
+.hero h2 {
+    text-transform: uppercase;
+    font-size: 3.5em;
+    letter-spacing: 5px;
+}
+
+.hero p {
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+
+.hero button {
+    margin-top: 1em;
+    padding: 0.5em 1.5em;
+    border: 1px solid #38ABAB;
+    background-color: #38ABAB;
+    color: #FFF;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition : .5s;
+}
+
+.hero button:hover {
+    background-color: #FFF;
+    color: #38ABAB;
+}
+
+footer {
+    padding: 1em;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 1em;
+}
+
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.socialmedia i {
+    color: #000;
+    transition: color 0.3s ease-in-out;
+}
+
+.fa-twitter:hover {
+    color: #1DA1F2;
+}
+
+.fa-facebook:hover {
+    color: #3B5998;
+}
+
+.fa-instagram:hover {
+    color: deeppink;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card {
+    margin: 2em 0;
+    padding: 3em 1em;
+    width: 30%;
+    background-color: #FFF;
+    border-radius: 20px;
+    border: 2px solid #38ABAB;
+    font-family: 'Times New Roman', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    transition : .5s;
+}
+
+.card h4 {
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+}
+
+.card p {
+    font-size: 1.2em;
+}
+
+.card:hover {
+    background-color: #38ABAB;
+    color: #FFF;
+}
+
+.loginsection, .registersection {
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 30rem;
+}
+
+.inputs {
+    text-align: center;
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #B3B3B3;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 20px;
+    color: #B3B3B3;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group {
+    margin-top: 3em;
+    position: relative;
+}
+
+.input-group input:focus + label, .input-group input.valid + label {
+    font-size: 12px;
+    color: #38ABAB;
+    transform: translate(-15px, -20px);
+}
+
+.submit-button {
+    margin-top: 3em;
+    width: 15rem;
+    padding: 0.8em;
+    background-color: #FFF;
+    color: #38ABAB;
+    border: 1px solid #38ABAB;
+    border-radius: 10px;
+    font-size: 1em;
+    transition : .5s;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #38ABAB;
+    color: #FFF;
+}
+
+.inputs p {
+    margin-top: 3em;
+}
+
+.registersection h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+.input-radio {
+    margin-top: 2em;
+    text-align: start;
+}
+
+h4.option {
+    font-size: 1em;
+    font-weight: 500;
+    text-align: start;
+}
+
+input[type="radio"] {
+    scale: 1.4;
+}
+
+.input-radio label {
+    position: static;
+    font-size: 1em;
+    color: #000;
+    margin-left: 0.5em;
+}
+
+.radio-option {
+    margin-top: 1em;
+    display: flex;
+    gap: 1em;
+}
+
+.cityoption {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #000;
+}
+
+.aboutheader {
+    text-align: center;
+}
+
+.aboutheader img {
+    margin-top: 2em;
+}
+
+.aboutcontent {
+    margin: 1em auto;
+    max-width: 60rem;
+}
+
+.contact {
+    margin-top: 2em;
+}
+
+.contact h3 {
+    font-size: 1.5em;
+}
+
+.contact p {
+    margin-top: 1em;
+}
+
+.healthcarecontent {
+    text-align: center;
+}
+
+.healthcarecontent p {
+    margin-top: 0.5em;
+}
+
+.healthcareproduct {
+    padding: 0 2em;
+    margin: 3em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.healthcarecard {
+    position: relative;
+    width: 25%;
+    padding: 1em 1.5em;  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 10px;
+}
+
+.healthcarecard img {
+    margin: 2em 0;
+    width: 70%;
+}
+
+.healthcarecard h5, .healthcarecard p {
+    text-align: start;
+}
+
+.healthcarecard h5 {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.healthcarecard p {
+    margin-top: 1em;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.best {
+    position: absolute;
+    left: 0;
+    top: 1em;
+    padding: 0.5em 1em;
+    background-color: yellow;
+    font-weight: 800;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+@keyframes fade
+{
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+    nav ul {
+        width: 100%;
+        scale: 0;
+        padding: 1em;
+        position: absolute;
+        top: 13%;
+        left: 0;
+        flex-direction: column;
+        background-color: #38ABAB;
+        gap: 1.5em;
+        transition: scale 0.4s ease-in-out;
+    }
+
+    nav ul li a {
+        color: #FFF;
+    }
+
+    nav ul li a:hover {
+        padding: 0;
+        border-bottom: 2px solid #FFF;
+    }
+
+    .login:hover {
+        opacity: 1;
+        border-radius: 0;
+        background-color: transparent;
+        color: #FFF;
+        border-bottom: 2px solid #FFF;
+    }
+
+    .active {
+        padding: 0;
+        border-bottom: 2px solid #FFF;
+        border-radius: 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .display-nav {
+        scale: 1;
+        z-index: 10;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .hero button {
+        font-size: 0.8em;
+    }
+
+    
+    .menu {
+        flex-direction: column;
+        padding: 1em;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .aboutsection {
+        padding: 1.5em;
+    }
+
+    .healthcareproduct {
+        flex-direction: column;
+    }
+
+    .healthcarecard {
+        width: 100%;
+    }
+}

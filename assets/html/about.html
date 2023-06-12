@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediacare</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="../../index.html"><img src="../img/icon.png" alt="icon"></a>
+            <nav>
+                <ul id="nav" class="nav">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li class="drowdownparent">
+                        <a href="product.html">Products</a>
+                        <ul class="dropdownchild">
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="#">Cosmetic</a></li>
+                            <li><a href="#">Misc.</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html" class="login">Login</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger" class="hamburger">&#9776;</button>
+        </div>
+    </header>
+    <main>
+        <div class="aboutsection">
+            <div class="aboutheader">
+                <h2>About Us</h2>
+                <img src="../img/icon.png" alt="icon">
+            </div>
+            <div class="aboutcontent">
+                <p>Founded in 2001, MediCare started as a small family-owned healthcare store in Kimanggisan, Jakarta. As more and more people get to know about MediCare, it is natural for us to exand our stores to other cities and province. Now, we have more than 100 stores spread out in almost every major cities in Indonesia, including but not limited to Aceh, Medan, Palembang, Jakarta, Surabaya, Pontianak, Balikpapan and Makassar. We also offer a wider variety for products from healthcare, cosmetics, medicines, and many more. We have a commitment to stay true to our humble origin and serving our customers with best customer services and high quality products.</p>
+                <div class="contact">
+                    <h3>Contact Us</h3>
+                    <p>Customer Service Hotline: (+62) 081123456789</p>
+                    <p>Customer Service Email: support@medicare.id</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="socialmedia">
+            <a href="https://www.instagram.com/alvinalvitodinovaa/" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+            <a href="https://www.instagram.com/alvinalvitodinovaa/" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+            <a href="https://www.instagram.com/alvinalvitodinovaa/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+        </div>
+        <p>Copyright &copy; 2022 Alvin Alvitodinova. All Rights Reserved.</p>
+    </footer>
+</body>
+<script>
+    const hamburgerMenu = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburgerMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        nav.classList.toggle('display-nav');
+    });
+</script>
+</html>

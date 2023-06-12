@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediacare</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="../../index.html"><img src="../img/icon.png" alt="icon"></a>
+            <nav>
+                <ul id="nav" class="nav">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li class="drowdownparent">
+                        <a href="product.html">Products</a>
+                        <ul class="dropdownchild">
+                            <li><a href="healthcare.html">Healthcare</a></li>
+                            <li><a href="#">Cosmetic</a></li>
+                            <li><a href="#">Misc.</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="register.html" class="active">Register</a></li>
+                    <li><a href="login.html" class="login">Login</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger" class="hamburger">&#9776;</button>
+        </div>
+    </header>
+    <main>
+        <div class="registersection">
+            <h2>Register</h2>
+            <div class="inputs">
+                    <form onsubmit="return validation()">
+                    <div class="input-group">
+                        <input type="text" id="fullname" autocomplete="off" required>
+                        <label for="fullname">Fullname</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-radio">
+                        <h4 class="option">Gender</h4>
+                        <div class="radio-option">
+                            <div class="radio-group">
+                                <input type="radio" id="Male" name="gender" value="Male">
+                                <label for="Male">Male</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="Female" name="gender" value="Female">
+                                <label for="Female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-radio">
+                        <h4 class="option">City</h4>
+                        <select name="city" id="city" class="cityoption" required>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Bandung">Bandung</option>
+                            <option value="Semarang">Semarang</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" autocomplete="off" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="confirmpassword" autocomplete="off" required>
+                        <label for="confirmpassword">Confirm Password</label>
+                    </div>
+                    <input type="submit" value="Register" class="submit-button">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="socialmedia">
+            <a href="https://www.instagram.com/alvinalvitodinovaa/" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+            <a href="https://www.instagram.com/alvinalvitodinovaa/" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+            <a href="https://www.instagram.com/alvinalvitodinovaa/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+        </div>
+        <p>Copyright &copy; 2022 Alvin Alvitodinova. All Rights Reserved.</p>
+    </footer>
+</body>
+<script>
+    const hamburgerMenu = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburgerMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        nav.classList.toggle('display-nav');
+    });
+
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.addEventListener('blur', (e) => {
+            if (e.target.value.length) {
+                e.target.classList.add('valid');
+            } else {
+                e.target.classList.remove('valid');
+            }
+        });
+    });
+</script>
+</html>
